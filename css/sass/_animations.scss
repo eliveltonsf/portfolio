@@ -22,3 +22,41 @@
   }
 
 }
+
+.line {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.typing-animation {
+  animation: blinkCursor 500ms steps(40) infinite normal,
+    typing 4s steps(40) 1s normal both,
+    // teste 5s ease 5s infinite alternate;
+}
+
+@keyframes teste {
+  from {
+  }
+  to {
+    /* border-right: 1px solid rgba(255, 255, 255, 0.75); */
+    border-right: none;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 10em;
+  }
+}
+
+@keyframes blinkCursor {
+  0% {
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+  }        
+  100% {
+    border-right: transparent;
+  }
+}

@@ -26,17 +26,22 @@
 
   @if $size == h1 and $device == desktop {
     font-family: 'Orbitron', sans-serif;
-    font-size: 80px;
+    font-size: 56px;
     line-height: 100%;
     font-weight: 500;
   } @else if $size == h1 and $device == mobile {
     font-family: 'Orbitron', sans-serif;
-    font-size: 56px;
+    font-size: 48px;
+    line-height: 110%;
+    font-weight: 500;
+  } @else if $size == h1 and $device == mediummobile {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
     line-height: 110%;
     font-weight: 500;
   } @else if $size == h1 and $device == smallmobile {
     font-family: 'Orbitron', sans-serif;
-    font-size: 48px;
+    font-size: 32px;
     line-height: 120%;
     font-weight: 500;
   }
@@ -207,6 +212,9 @@ h1 {
   @include typeface-1(h1, desktop);
   @include responsive(s) {
     @include typeface-1(h1, mobile);
+  }
+  @include responsive(ms) {
+    @include typeface-1(h1, mediummobile);
   }
   @include responsive(xs) {
     @include typeface-1(h1, smallmobile);

@@ -5,6 +5,7 @@ $container-xl: 1440px;
 $container-l: 1216px;
 $container-m: 960px;
 $container-s: 620px;
+$container-ms: 560px;
 $container-xs: 340px;
 $gutter: 32px;
 
@@ -45,6 +46,13 @@ $gutter: 32px;
   @else if $device == s {
     // For resolutions less than 960px
     @media screen and (max-width: $container-m) {
+      @content;
+    }
+  } 
+
+  @else if $device == ms {
+    // For resolutions less than 960px
+    @media screen and (max-width: $container-ms) {
       @content;
     }
   } 
