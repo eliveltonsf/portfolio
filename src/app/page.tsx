@@ -1,113 +1,109 @@
-import Image from 'next/image'
+"use client";
+
+import ModeToggle from "@/components/ModeToggle";
+import axios from "axios";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
+import MyCard from "@/components/MyCard";
 
 export default function Home() {
+  const [repos, setRepos] = useState<any[]>();
+  const getProfileData = async () => {
+    const response = await axios.get(
+      "https://api.github.com/users/eliveltonsf/repos"
+    );
+    setRepos(response.data);
+  };
+
+  useEffect(() => {
+    getProfileData();
+  }, []);
+
+  // const { data, isLoading } = useQuery({
+  //   queryKey: ["profile"],
+  //   queryFn: getProfileData,
+  // });
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
+    <main className="flex min-h-screen flex-col items-center justify-between p-8">
+      <ModeToggle />
+
+      <section className="flex flex-col gap-3 pb-16">
+        <Image src="/profile.png" alt="logo" width={160} height={160} />
+
+        <h1 className="font-bold text-[2.7rem] text-primary bg-clip-text py-4">
+          Hi, I'm Elivelton Ferreira.
+        </h1>
+
+        <p className="text-sm  leading-7 text-text">
+          What motivates me is the incessant search for challenges that allow me
+          to continually learn and grow. I love collaborating on innovative
+          teams and working on projects that make us better with each line of
+          code. My goal is to continue improving my React skills and develop web
+          and mobile solutions that offer an exceptional user experience.
         </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+
+        <div className="flex justify-start mt-6">
+          <ul className="flex justify-between gap-7 text-sm">
+            <li>GitHub</li>
+            <li>Instagram</li>
+            <li>Linkedin</li>
+            <li>Curriculum</li>
+          </ul>
         </div>
-      </div>
+      </section>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <aside className="flex flex-col justify-start items-start gap-3 w-full">
+        <div className="flex flex-col w-full">
+          <h3 className="flex w-auto uppercase pb-4 tracking-widest text-sm font-semibold">
+            Project
+          </h3>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          {repos ? (
+            repos?.map(
+              (repo: any, index: number) =>
+                repo.stargazers_count > 0 && (
+                  <MyCard
+                    key={index}
+                    title="Project"
+                    name={repo.name.replace(/-/g, " ")}
+                    description={repo.description}
+                  />
+                )
+            )
+          ) : (
+            <div className="flex flex-col">
+              <Skeleton className="h-52 rounded-lg mb-4" />
+              <Skeleton className="h-48 rounded-lg mb-4" />
+              <Skeleton className="h-48 rounded-lg mb-4" />
+              <Skeleton className="h-48 rounded-lg mb-4" />
+            </div>
+          )}
+        </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        <div className="flex flex-col w-full">
+          <h3 className="flex w-auto uppercase pb-4 tracking-widest text-sm font-semibold">
+            Experience
+          </h3>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+          <MyCard
+            title="Experience"
+            logo="/logoExperience/mobs2.png"
+            date="set de 2020 - mai de 2021 · 9 meses"
+            name="Frontend Web Developer JR"
+            description="Contribuir na equipe de suporte e inovação a aplicativos e sites internos e projetos.
+            Para criar telas íntegras e fiéis ao que foi solicitado,
+            mantendo uma usabilidade que facilite a melhor integração ao usuário final, construí telas para aplicativos de validação de dados com APIs externas de segurança para confirmação se o hardware usado é valido para uso do aplicativo. Também fazia parte da equipe de briefing para levantamentos de requisitos de novos projetos.
+            Participei da criação do Frontend de dois projetos de imobiliária, criando um Dashboard
+            e um Marketplace."
+          />
+        </div>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        <h3 className="flex w-auto uppercase pb-4 tracking-widest text-sm font-semibold">
+          Stack
+        </h3>
+      </aside>
     </main>
-  )
+  );
 }
