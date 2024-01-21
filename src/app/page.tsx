@@ -25,7 +25,7 @@ export default function Home() {
       <ModeToggle />
 
       <section className="flex flex-col gap-3 pb-16">
-        <Image src="/profile.png" alt="logo" width={160} height={160} />
+        <Image src="./profile.png" alt="logo" width={160} height={160} />
 
         <h1 className="font-bold text-[2.7rem] text-primary bg-clip-text py-4">
           Hi, I'm Elivelton Ferreira.
@@ -84,7 +84,7 @@ export default function Home() {
 
           <MyCard
             title="Experience"
-            logo="/logoExperience/mobs2.png"
+            logo="./logoExperience/mobs2.png"
             date="set de 2020 - mai de 2021 · 9 meses"
             name="Frontend Web Developer JR"
             description="Contribuir na equipe de suporte e inovação a aplicativos e sites internos e projetos.
