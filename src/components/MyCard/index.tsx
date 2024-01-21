@@ -24,15 +24,15 @@ export default function MyCard({
 }: CardProps) {
   return (
     <Card
-      className={`border-none mb-4 p-10 ${
+      className={`border-none mb-4 sm:p-4 ${
         logo && logo
-      } bg-cover bg-no-repeat  bg-card`}
+      } bg-cover bg-no-repeat bg-card `}
       {...rest}
     >
       <CardHeader className="pb-2">
         <CardTitle className=" text-[0.7rem] text-primary uppercase tracking-widest h-auto">
           {date ? (
-            <div className="flex justify-between h-auto pb-4">
+            <div className="flex flex-col justify-between h-auto pb-4 sm:relative ">
               <div>
                 {title}
 
@@ -41,8 +41,12 @@ export default function MyCard({
                 </span>
               </div>
               {logo && (
-                <picture>
-                  <img className=" w-32 h-30" src={logo} alt="logo" />
+                <picture className="mt-6 sm:absolute sm:right-0 sm:-top-6">
+                  <img
+                    className="w-32 h-30 sm:w-28 sm:h-18"
+                    src={logo}
+                    alt="logo"
+                  />
                 </picture>
               )}
             </div>
