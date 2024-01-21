@@ -22,8 +22,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-8">
-      oi
-      {/* <ModeToggle />
+      <ModeToggle />
 
       <section className="flex flex-col gap-3 pb-16">
         <Image src="/profile.png" alt="logo" width={160} height={160} />
@@ -99,7 +98,7 @@ export default function Home() {
         <h3 className="flex w-auto uppercase pb-4 tracking-widest text-sm font-semibold">
           Stack
         </h3>
-      </aside> */}
+      </aside>
     </main>
   );
 }
