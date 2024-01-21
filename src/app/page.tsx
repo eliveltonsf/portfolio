@@ -6,8 +6,10 @@ import MyCard from "@/components/MyCard";
 import SocialLinks from "@/components/SocialLinks";
 import ContainerAside from "@/components/ContainerAside";
 import ModeToggle from "@/components/ModeToggle";
+import Stacks from "@/components/Stacks";
 import { Skeleton } from "@/components/ui/skeleton";
 import { EXPERIENCES_INFO } from "@/constants/experiences";
+import { STACKS_INFO } from "@/constants/stacks";
 
 export default function Home() {
   const [repos, setRepos] = useState<any[]>();
@@ -96,12 +98,7 @@ export default function Home() {
         </ContainerAside>
 
         <ContainerAside title="Stack">
-          <div className="flex flex-col">
-            <Skeleton className="h-20 w-20 rounded-lg mb-4" />
-            <Skeleton className="h-20 w-20 rounded-lg mb-4" />
-            <Skeleton className="h-20 w-20 rounded-lg mb-4" />
-            <Skeleton className="h-20 w-20 rounded-lg mb-4" />
-          </div>
+          <Stacks data={STACKS_INFO} />
         </ContainerAside>
       </aside>
     </main>
