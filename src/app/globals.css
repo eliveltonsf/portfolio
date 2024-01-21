@@ -63,3 +63,25 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+.style-scrollbar::-webkit-scrollbar {
+  height: 4px;
+}
+
+.style-scrollbar::-webkit-scrollbar-thumb {
+  background: #9E70E6;
+  border-radius: 10px;
+}
+
+.webkit-scrollbar-pfnone::-webkit-scrollbar {
+  display: none;
+}
+.webkit-scrollbar-pf::-webkit-scrollbar {
+  width: 2px;
+}
+.webkit-scrollbar-pf::-webkit-scrollbar-thumb {
+  background: #b8bbb6;
+  border-radius: 10px;
+}
+}
