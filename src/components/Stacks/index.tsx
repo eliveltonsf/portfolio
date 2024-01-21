@@ -27,32 +27,13 @@ import { GiJesterHat } from "react-icons/gi";
 import { useState } from "react";
 
 type StackDataProps = DynamicIconProps & {
-  iconName: DynamicIconProps;
+  iconName: string;
   description: string;
   study: boolean;
 };
 
 interface DynamicIconProps {
-  iconName:
-    | "html"
-    | "css"
-    | "js"
-    | "react"
-    | "next"
-    | "typescript"
-    | "radix"
-    | "sass"
-    | "styled"
-    | "tailwind"
-    | "figma"
-    | "storybook"
-    | "node"
-    | "jest"
-    | "vtex"
-    | "docker"
-    | "kubernetes"
-    | "python"
-    | "cypress";
+  iconName: string;
 }
 
 interface CardProps {
@@ -132,8 +113,6 @@ export default function Stacks({ data, ...rest }: CardProps) {
 
     return iconComponent;
   };
-
-  const handleSelectStack = ({ iconName, description }: any) => {};
 
   return (
     <div className="flex flex-col justify-start gap-6" {...rest}>
