@@ -1,11 +1,12 @@
 "use client";
-
-import ModeToggle from "@/components/ModeToggle";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import { Skeleton } from "@/components/ui/skeleton";
 import MyCard from "@/components/MyCard";
+import SocialLinks from "@/components/SocialLinks";
+import ContainerAside from "@/components/ContainerAside";
+import ModeToggle from "@/components/ModeToggle";
+import { Skeleton } from "@/components/ui/skeleton";
 import { EXPERIENCES_INFO } from "@/constants/experiences";
 
 export default function Home() {
@@ -40,22 +41,16 @@ export default function Home() {
           and mobile solutions that offer an exceptional user experience.
         </p>
 
-        <div className="flex justify-start mt-6">
-          <ul className="flex justify-between gap-7 text-sm">
-            <li>GitHub</li>
-            <li>Instagram</li>
-            <li>Linkedin</li>
-            <li>Curriculum</li>
-          </ul>
-        </div>
+        <SocialLinks
+          gitHub="https://github.com/eliveltonsf"
+          instagram="https://www.instagram.com/eliveltonsf.dev/"
+          linkedin="https://www.linkedin.com/in/eliveltonsf/"
+          curriculum="https://drive.google.com/file/d/1zRromvWgGaWXtJtp5Mp_JUTPOopkvMNk/view?usp=sharing"
+        />
       </section>
 
       <aside className="flex flex-col justify-start items-start gap-3 w-full">
-        <div className="flex flex-col w-full">
-          <h3 className="flex w-auto uppercase pb-4 tracking-widest text-sm font-semibold">
-            Project
-          </h3>
-
+        <ContainerAside title="Project">
           {repos ? (
             repos?.map(
               (repo: any, index: number) =>
@@ -76,28 +71,38 @@ export default function Home() {
               <Skeleton className="h-48 rounded-lg mb-4" />
             </div>
           )}
-        </div>
+        </ContainerAside>
 
-        <div className="flex flex-col w-full">
-          <h3 className="flex w-auto uppercase pb-4 tracking-widest text-sm font-semibold">
-            Experience
-          </h3>
+        <ContainerAside title="Experience">
+          {EXPERIENCES_INFO ? (
+            EXPERIENCES_INFO.map((item, index) => (
+              <MyCard
+                key={index}
+                title="Experience"
+                logo={item.logoPath}
+                date={item.period}
+                name={item.name}
+                description={item.description}
+              />
+            ))
+          ) : (
+            <div className="flex flex-col">
+              <Skeleton className="h-52 rounded-lg mb-4" />
+              <Skeleton className="h-48 rounded-lg mb-4" />
+              <Skeleton className="h-48 rounded-lg mb-4" />
+              <Skeleton className="h-48 rounded-lg mb-4" />
+            </div>
+          )}
+        </ContainerAside>
 
-          {EXPERIENCES_INFO.map((item, index) => (
-            <MyCard
-              key={index}
-              title="Experience"
-              logo={item.logoPath}
-              date={item.period}
-              name={item.name}
-              description={item.description}
-            />
-          ))}
-        </div>
-
-        <h3 className="flex w-auto uppercase pb-4 tracking-widest text-sm font-semibold">
-          Stack
-        </h3>
+        <ContainerAside title="Stack">
+          <div className="flex flex-col">
+            <Skeleton className="h-20 w-20 rounded-lg mb-4" />
+            <Skeleton className="h-20 w-20 rounded-lg mb-4" />
+            <Skeleton className="h-20 w-20 rounded-lg mb-4" />
+            <Skeleton className="h-20 w-20 rounded-lg mb-4" />
+          </div>
+        </ContainerAside>
       </aside>
     </main>
   );
