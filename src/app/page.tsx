@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import MyCard from "@/components/MyCard";
+import { EXPERIENCES_INFO } from "@/constants/experiences";
 
 export default function Home() {
   const [repos, setRepos] = useState<any[]>();
@@ -82,17 +83,16 @@ export default function Home() {
             Experience
           </h3>
 
-          <MyCard
-            title="Experience"
-            logo="./logoExperience/mobs2.png"
-            date="set de 2020 - mai de 2021 · 9 meses"
-            name="Frontend Web Developer JR"
-            description="Contribuir na equipe de suporte e inovação a aplicativos e sites internos e projetos.
-            Para criar telas íntegras e fiéis ao que foi solicitado,
-            mantendo uma usabilidade que facilite a melhor integração ao usuário final, construí telas para aplicativos de validação de dados com APIs externas de segurança para confirmação se o hardware usado é valido para uso do aplicativo. Também fazia parte da equipe de briefing para levantamentos de requisitos de novos projetos.
-            Participei da criação do Frontend de dois projetos de imobiliária, criando um Dashboard
-            e um Marketplace."
-          />
+          {EXPERIENCES_INFO.map((item, index) => (
+            <MyCard
+              key={index}
+              title="Experience"
+              logo={item.logoPath}
+              date={item.period}
+              name={item.name}
+              description={item.description}
+            />
+          ))}
         </div>
 
         <h3 className="flex w-auto uppercase pb-4 tracking-widest text-sm font-semibold">
