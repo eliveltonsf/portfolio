@@ -117,23 +117,29 @@ export default function Stacks({ data, ...rest }: CardProps) {
   return (
     <div className="flex flex-col justify-start gap-6" {...rest}>
       <aside className="mt-4 min-h-32">
-        <h2 className="text-lg font-semibold text-title">
-          Conhecimento{" "}
+        <h2
+          className="text-lg font-semibold text-title before:content-['Conhecimento']
+        lg:before:content-['Stack']"
+        >
           <div className="w-[3px] h-[3px] bg-primary inline-block" />
         </h2>
         <p className="text-sm text-gray-400 text-text">
           {selectStack.description}
         </p>
       </aside>
-      <div className="flex gap-2 w-full overflow-x-scroll style-scrollbar">
+      <div
+        className="flex gap-2 w-full overflow-x-scroll style-scrollbar
+        lg:overflow-hidden lg:w-full lg:flex-wrap lg:gap-4"
+      >
         {data ? (
           data.map((stack, index) => (
             <Card
               key={index}
-              className={`h-20 w-20 border-none mb-4 ${
+              className={`box-border flex justify-center items-center w-20 h-20 border-none mb-4 relative ${
                 selectStack.iconName === stack.iconName &&
-                "border border-solid border-spacing-2 border-primary"
-              }`}
+                " border border-solid border-spacing-4 border-primary"
+              }
+              lg:mb-0`}
               onMouseOverCapture={() =>
                 setSelectStack({
                   iconName: stack.iconName,
@@ -141,7 +147,14 @@ export default function Stacks({ data, ...rest }: CardProps) {
                 })
               }
             >
-              <CardContent className="flex ustify-center content-center items-center text-primary p-4">
+              {/* {stack.study && (
+                <div className="flex absolute top-1 left-2 w-[80%] h-full border border-spacing-2 border-solid border-primary bg-transparent rounded-lg">
+                  <span className="text-primary text-[10px]">Study</span>
+                </div>
+              )} */}
+              <CardContent
+                className={`flex justify-center items-center content-center text-primary p-[1.5rem]`}
+              >
                 <DynamicIcon iconName={stack.iconName} />
               </CardContent>
             </Card>
