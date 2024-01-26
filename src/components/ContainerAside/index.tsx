@@ -13,7 +13,10 @@ export default function ContainerAside({
 }: ContainerAsideProps) {
   return (
     <div className="flex flex-col w-full">
-      <h3 className="flex w-auto uppercase pb-4 tracking-widest text-sm font-semibold">
+      <h3
+        className="flex w-auto uppercase pb-4 tracking-widest text-sm font-semibold
+      lg:hidden"
+      >
         {title}
       </h3>
       {children}

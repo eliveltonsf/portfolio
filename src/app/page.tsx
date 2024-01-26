@@ -25,17 +25,29 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-8">
+    <main
+      className="flex min-h-screen flex-col items-center justify-between 
+    lg:flex-row lg:overflow-hidden"
+    >
       <ModeToggle />
 
-      <section className="flex flex-col gap-3 pb-16">
+      <section
+        className="flex flex-col gap-3 p-8 pb-16 
+      lg:w-[50%] lg:h-lvh lg:content-start lg:justify-between lg:p-20 lg:pr-0 "
+      >
         <Image src="./profile.png" alt="logo" width={160} height={160} />
 
-        <h1 className="font-bold text-[2.7rem] text-primary bg-clip-text py-4">
+        <h1
+          className="font-bold text-[2.7rem] text-primary bg-clip-text
+        lg:text-[3.7rem] lg:w-[60%]"
+        >
           Hi, I'm Elivelton Ferreira.
         </h1>
 
-        <p className="text-sm  leading-7 text-text">
+        <p
+          className="text-sm  leading-7 text-text
+        lg:text-lg lg:w-[60%] lg:tracking-normal lg:leading-9"
+        >
           What motivates me is the incessant search for challenges that allow me
           to continually learn and grow. I love collaborating on innovative
           teams and working on projects that make us better with each line of
@@ -51,7 +63,10 @@ export default function Home() {
         />
       </section>
 
-      <aside className="flex flex-col justify-start items-start gap-3 w-full">
+      <aside
+        className="flex flex-col justify-start items-start gap-3 w-full p-8
+        lg:w-[50%] lg:h-lvh overflow-y-scroll lg:p-20 lg:pl-0 lg:pr-24"
+      >
         <ContainerAside title="Project">
           {repos ? (
             repos?.map(
