@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import MyTooltip from "../MyTooltip";
 
 export default function ModeToggle() {
   const { setTheme } = useTheme();
@@ -15,8 +16,9 @@ export default function ModeToggle() {
 
   return (
     <Button
-      className="absolute top-8 right-8"
-      variant="outline"
+      className="absolute top-8 right-8 text-primary bg-card
+      hover:box-border hover:border hover:border-solid hover:border-2 hover:border-primary"
+      variant="secondary"
       size="icon"
       onClick={() => setMode(!mode)}
     >

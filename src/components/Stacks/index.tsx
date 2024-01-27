@@ -1,6 +1,13 @@
+"use client";
+import { useState } from "react";
+
 import { Card, CardContent } from "../ui/card";
 import { Skeleton } from "../ui/skeleton";
 
+import { BiLogoFigma } from "react-icons/bi";
+import { GiJesterHat } from "react-icons/gi";
+import { IoLogoJavascript } from "react-icons/io";
+import { TbBrandNextjs, TbError404Off } from "react-icons/tb";
 import {
   FaHtml5,
   FaCss3,
@@ -10,8 +17,6 @@ import {
   FaDocker,
   FaPython,
 } from "react-icons/fa6";
-import { TbBrandNextjs, TbError404Off } from "react-icons/tb";
-import { IoLogoJavascript } from "react-icons/io";
 import {
   SiCypress,
   SiKubernetes,
@@ -22,9 +27,6 @@ import {
   SiTypescript,
   SiVtex,
 } from "react-icons/si";
-import { BiLogoFigma } from "react-icons/bi";
-import { GiJesterHat } from "react-icons/gi";
-import { useState } from "react";
 
 type StackDataProps = DynamicIconProps & {
   iconName: string;
@@ -137,7 +139,7 @@ export default function Stacks({ data, ...rest }: CardProps) {
               key={index}
               className={`box-border flex justify-center items-center w-20 h-20 border-none mb-4 relative ${
                 selectStack.iconName === stack.iconName &&
-                " border border-solid border-spacing-4 border-primary"
+                "border border-solid border-2 border-primary"
               }
               lg:mb-0`}
               onMouseOverCapture={() =>
@@ -147,11 +149,6 @@ export default function Stacks({ data, ...rest }: CardProps) {
                 })
               }
             >
-              {/* {stack.study && (
-                <div className="flex absolute top-1 left-2 w-[80%] h-full border border-spacing-2 border-solid border-primary bg-transparent rounded-lg">
-                  <span className="text-primary text-[10px]">Study</span>
-                </div>
-              )} */}
               <CardContent
                 className={`flex justify-center items-center content-center text-primary p-[1.5rem]`}
               >

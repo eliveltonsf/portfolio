@@ -1,18 +1,42 @@
-import Link from "next/link";
-import { ReactNode } from "react";
+"use client";
+
+import { ReactNode, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
 
 type ContainerAsideProps = React.HTMLAttributes<HTMLDivElement> & {
+  id: string;
   children: ReactNode;
   title: string;
 };
 
 export default function ContainerAside({
+  id,
   children,
   title,
   ...rest
 }: ContainerAsideProps) {
+  const controls = useAnimation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const element = document.getElementById(id);
+      if (element) {
+        const offsetTop = element.offsetTop;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth",
+        });
+      }
+    };
+  }, [id, controls]);
+
   return (
-    <div className="flex flex-col w-full">
+    <motion.div
+      id={id}
+      animate={controls}
+      transition={{ duration: 0.8 }}
+      className="flex flex-col w-full"
+    >
       <h3
         className="flex w-auto uppercase pb-4 tracking-widest text-sm font-semibold
       lg:hidden"
@@ -20,6 +44,6 @@ export default function ContainerAside({
         {title}
       </h3>
       {children}
-    </div>
+    </motion.div>
   );
 }

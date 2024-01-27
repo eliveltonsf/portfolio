@@ -26,7 +26,7 @@ export default function MyCard({
     <Card
       className={`border-none mb-4 sm:p-4 ${
         logo && logo
-      } bg-cover bg-no-repeat bg-card `}
+      } bg-cover bg-no-repeat bg-card`}
       {...rest}
     >
       <CardHeader className="pb-2">
