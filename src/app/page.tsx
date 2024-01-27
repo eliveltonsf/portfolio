@@ -1,6 +1,3 @@
-"use client";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import Image from "next/image";
 import MyCard from "@/components/MyCard";
 import SocialLinks from "@/components/SocialLinks";
@@ -11,48 +8,59 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { EXPERIENCES_INFO } from "@/constants/experiences";
 import { STACKS_INFO } from "@/constants/stacks";
 
+import { ArchiveIcon, BackpackIcon, RocketIcon } from "@radix-ui/react-icons";
+import Anchor from "@/components/Anchor";
+import Repositories from "@/components/Repositories";
+import GloboTech from "@/components/GloboTech";
+
 export default function Home() {
-  const [repos, setRepos] = useState<any[]>();
-  const getProfileData = async () => {
-    const response = await axios.get(
-      "https://api.github.com/users/eliveltonsf/repos"
-    );
-    setRepos(response.data);
-  };
-
-  useEffect(() => {
-    getProfileData();
-  }, []);
-
   return (
     <main
-      className="flex min-h-screen flex-col items-center justify-between 
-    lg:flex-row lg:overflow-hidden"
+      className="flex min-h-screen flex-col items-center justify-between relative 
+      lg:flex-row lg:overflow-hidden"
     >
       <ModeToggle />
 
+      <Anchor id="experience" className="lg:top-20" tooltip="Experiências">
+        <BackpackIcon className="h-[1.2rem] w-[1.2rem] text-primary" />
+      </Anchor>
+
+      <Anchor id="project" className="lg:top-32" tooltip="Projetos">
+        <ArchiveIcon className="h-[1.2rem] w-[1.2rem] text-primary" />
+      </Anchor>
+
+      <Anchor id="stack" className="lg:top-44" tooltip="Tecnologias">
+        <RocketIcon className="h-[1.2rem] w-[1.2rem] text-primary" />
+      </Anchor>
+
       <section
         className="flex flex-col gap-3 p-8 pb-16 
-      lg:w-[50%] lg:h-lvh lg:content-start lg:justify-between lg:p-20 lg:pr-0 "
+        lg:w-[50%] lg:h-lvh lg:content-start lg:justify-between lg:p-20 lg:pr-0"
       >
         <Image src="./profile.png" alt="logo" width={160} height={160} />
 
-        <h1
-          className="font-bold text-[2.7rem] text-primary bg-clip-text
-        lg:text-[3.7rem] lg:w-[60%]"
-        >
-          Hi, I'm Elivelton Ferreira.
-        </h1>
+        <div className="flex flex-col">
+          <span className="text-primary text-2xl font-medium">Quem sou</span>
+          <h1
+            className="font-bold text-[2.7rem] text-title bg-clip-text
+            lg:text-[3.7rem] lg:w-[60%]"
+          >
+            {" "}
+            Elivelton Ferreira
+          </h1>
+          <span className="text-text text-lg">Frontend & Mobile Developer</span>
+        </div>
 
         <p
           className="text-sm  leading-7 text-text
         lg:text-lg lg:w-[60%] lg:tracking-normal lg:leading-9"
         >
-          What motivates me is the incessant search for challenges that allow me
-          to continually learn and grow. I love collaborating on innovative
-          teams and working on projects that make us better with each line of
-          code. My goal is to continue improving my React skills and develop web
-          and mobile solutions that offer an exceptional user experience.
+          O que me motiva é a busca incessante por desafios que me permitam
+          aprender e crescer continuamente. Adoro colaborar em equipes
+          inovadoras e trabalhar em projetos que nos tornam melhores a cada
+          linha de código. Meu objetivo é continuar aprimorando minhas
+          habilidades em React e desenvolver soluções web e mobile que ofereçam
+          uma experiência de usuário excepcional.
         </p>
 
         <SocialLinks
@@ -64,33 +72,12 @@ export default function Home() {
       </section>
 
       <aside
-        className="flex flex-col justify-start items-start gap-3 w-full p-8
-        lg:w-[50%] lg:h-lvh overflow-y-scroll lg:p-20 lg:pl-0 lg:pr-24"
+        className="flex flex-col justify-start items-start gap-3 w-full p-8 overflow-y-scroll
+        lg:w-[50%] lg:h-lvh lg:p-20 lg:pl-0 lg:pr-24 lg:scroll-smooth lg:style-scrollbar-h lg:overflow-x-hidden"
       >
-        <ContainerAside title="Project">
-          {repos ? (
-            repos?.map(
-              (repo: any, index: number) =>
-                repo.stargazers_count > 0 && (
-                  <MyCard
-                    key={index}
-                    title="Project"
-                    name={repo.name.replace(/-/g, " ")}
-                    description={repo.description}
-                  />
-                )
-            )
-          ) : (
-            <div className="flex flex-col">
-              <Skeleton className="h-52 rounded-lg mb-4" />
-              <Skeleton className="h-48 rounded-lg mb-4" />
-              <Skeleton className="h-48 rounded-lg mb-4" />
-              <Skeleton className="h-48 rounded-lg mb-4" />
-            </div>
-          )}
-        </ContainerAside>
+        <GloboTech />
 
-        <ContainerAside title="Experience">
+        <ContainerAside id="experience" title="Experience">
           {EXPERIENCES_INFO ? (
             EXPERIENCES_INFO.map((item, index) => (
               <MyCard
@@ -112,7 +99,11 @@ export default function Home() {
           )}
         </ContainerAside>
 
-        <ContainerAside title="Stack">
+        <ContainerAside id="project" title="Project">
+          <Repositories />
+        </ContainerAside>
+
+        <ContainerAside id="stack" title="Stack">
           <Stacks data={STACKS_INFO} />
         </ContainerAside>
       </aside>

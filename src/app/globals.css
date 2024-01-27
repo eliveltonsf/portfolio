@@ -68,19 +68,35 @@
 .style-scrollbar::-webkit-scrollbar {
   height: 4px;
 }
-
 .style-scrollbar::-webkit-scrollbar-thumb {
   background: #9E70E6;
   border-radius: 10px;
 }
-
-.webkit-scrollbar-pfnone::-webkit-scrollbar {
+.webkit-style-scrollbar::-webkit-scrollbar {
   display: none;
 }
-.webkit-scrollbar-pf::-webkit-scrollbar {
+.webkit-style-scrollbar::-webkit-scrollbar {
   width: 2px;
 }
-.webkit-scrollbar-pf::-webkit-scrollbar-thumb {
+.webkit-style-scrollbar::-webkit-scrollbar-thumb {
+  background: #b8bbb6;
+  border-radius: 10px;
+}
+
+.style-scrollbar-h::-webkit-scrollbar {
+  width: 4px;
+}
+.style-scrollbar-h::-webkit-scrollbar-thumb {
+  background: #9E70E6;
+  border-radius: 10px;
+}
+.webkit-style-scrollbar-h::-webkit-scrollbar {
+  display: none;
+}
+.webkit-style-scrollbar-h::-webkit-scrollbar {
+  width: 2px;
+}
+.webkit-style-scrollbar-h::-webkit-scrollbar-thumb {
   background: #b8bbb6;
   border-radius: 10px;
 }
