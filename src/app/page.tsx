@@ -71,7 +71,7 @@ export default function Home() {
           gitHub="https://github.com/eliveltonsf"
           instagram="https://www.instagram.com/eliveltonsf.dev/"
           linkedin="https://www.linkedin.com/in/eliveltonsf/"
-          curriculum="https://drive.google.com/file/d/1zRromvWgGaWXtJtp5Mp_JUTPOopkvMNk/view?usp=sharing"
+          curriculum="https://drive.google.com/file/d/1EDtcBaeuR9GAjJBQi7QjU0TyF6Oh2Pr6/view"
         />
       </section>
 
