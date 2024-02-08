@@ -13,7 +13,11 @@ import Anchor from "@/components/Anchor";
 import Repositories from "@/components/Repositories";
 import GloboTech from "@/components/GloboTech";
 
+import { motion } from "framer-motion";
+
 export default function Home() {
+  // const MotionCard = motion(MyCard);
+
   return (
     <main
       className="flex min-h-screen flex-col items-center justify-between relative 
@@ -87,6 +91,7 @@ export default function Home() {
                 date={item.period}
                 name={item.name}
                 description={item.description}
+                // whileHover={{ scale: 1.1 }}
               />
             ))
           ) : (

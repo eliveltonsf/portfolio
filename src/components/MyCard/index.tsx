@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import {
   Card,
   CardContent,
@@ -22,6 +25,10 @@ export default function MyCard({
   date,
   ...rest
 }: CardProps) {
+  const [listDescription, setListDescription] = useState(() => {
+    const list = description.split(".");
+    return list;
+  });
   return (
     <Card
       className={`border-none mb-4 sm:p-4 ${
@@ -59,7 +66,13 @@ export default function MyCard({
         </CardDescription>
       </CardHeader>
       <CardContent className="text-sm text-gray-400 text-text">
-        {description}
+        {title !== "Experience"
+          ? description
+          : listDescription.map((item, index) => (
+              <p key={index} className="my-4">
+                {item}
+              </p>
+            ))}
       </CardContent>
     </Card>
   );
