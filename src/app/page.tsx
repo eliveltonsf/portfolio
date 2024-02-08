@@ -16,8 +16,6 @@ import GloboTech from "@/components/GloboTech";
 import { motion } from "framer-motion";
 
 export default function Home() {
-  // const MotionCard = motion(MyCard);
-
   return (
     <main
       className="flex min-h-screen flex-col items-center justify-between relative 
@@ -39,7 +37,7 @@ export default function Home() {
 
       <section
         className="flex flex-col gap-3 p-8 pb-16 
-        lg:w-[50%] lg:h-lvh lg:content-start lg:justify-between lg:p-20 lg:pr-0"
+        lg:w-[50%] lg:h-lvh lg:content-start lg:justify-between lg:p-20 lg:pr-0 lg:z-0"
       >
         <Image src="./profile.png" alt="logo" width={160} height={160} />
 
@@ -77,7 +75,7 @@ export default function Home() {
 
       <aside
         className="flex flex-col justify-start items-start gap-3 w-full p-8 overflow-y-scroll
-        lg:w-[50%] lg:h-lvh lg:p-20 lg:pl-0 lg:pr-24 lg:scroll-smooth lg:style-scrollbar-h lg:overflow-x-hidden"
+        lg:w-[50%] lg:h-lvh lg:p-20 lg:pl-0 lg:pr-24 lg:scroll-smooth lg:style-scrollbar-h lg:overflow-x-hidden 2xl:ml-20"
       >
         <GloboTech />
 
@@ -90,8 +88,11 @@ export default function Home() {
                 logo={item.logoPath}
                 date={item.period}
                 name={item.name}
+                link={item.linkedin}
                 description={item.description}
-                // whileHover={{ scale: 1.1 }}
+                linkedin={item.linkedin}
+                instagram={item.instagram}
+                site={item.site}
               />
             ))
           ) : (
