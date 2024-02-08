@@ -5,6 +5,9 @@ import { getReposData } from "@/services/api";
 
 import MyCard from "../MyCard";
 import { Skeleton } from "../ui/skeleton";
+import { motion } from "framer-motion";
+
+const MotionCard = motion(MyCard, { forwardMotionProps: true });
 
 export default function Repositories() {
   const { data, isLoading } = useQuery({
@@ -14,16 +17,21 @@ export default function Repositories() {
   });
 
   return (
-    <div className="lg:flex lg:w-full lg:justify-between lg:flex-wrap lg:gap-3">
+    <div className="lg:flex lg:w-full lg:justify-between lg:flex-wrap">
       {!isLoading ? (
         data?.map(
           (repo: any, index: number) =>
             repo.stargazers_count > 0 && (
-              <MyCard
+              <MotionCard
                 key={index}
                 title="Project"
                 name={repo.name.replace(/-/g, " ")}
                 description={repo.description}
+                link={repo.html_url}
+                whileHover={{
+                  scale: 1.07,
+                  transition: { duration: 0.4 },
+                }}
               />
             )
         )
