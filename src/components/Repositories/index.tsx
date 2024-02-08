@@ -14,7 +14,7 @@ export default function Repositories() {
   });
 
   return (
-    <>
+    <div className="lg:flex lg:w-full lg:justify-between lg:flex-wrap lg:gap-3">
       {!isLoading ? (
         data?.map(
           (repo: any, index: number) =>
@@ -35,6 +35,6 @@ export default function Repositories() {
           <Skeleton className="h-48 rounded-lg mb-4" />
         </div>
       )}
-    </>
+    </div>
   );
 }

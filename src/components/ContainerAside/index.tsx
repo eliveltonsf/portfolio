@@ -35,7 +35,7 @@ export default function ContainerAside({
       id={id}
       animate={controls}
       transition={{ duration: 0.8 }}
-      className="flex flex-col w-full"
+      className={`flex flex-col w-full ${title === "project" && "flex-wrap"}`}
     >
       <h3
         className="flex w-auto uppercase pb-4 tracking-widest text-sm font-semibold
