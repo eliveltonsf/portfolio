@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
     --foreground: 224 71.4% 4.1%;
-    --card:  220 13% 91%;
+    --card: 220 13% 91%;
     --card-foreground: 224 71.4% 4.1%;
     --popover: 0 0% 100%;
     --popover-foreground: 224 71.4% 4.1%;
@@ -27,7 +27,7 @@
     --ring: 263.4 70.2% 67.1%;
     --radius: 1rem;
     --text: 215 19% 35%;
-    --title: 222 47% 11%
+    --title: 222 47% 11%;
   }
 
   .dark {
@@ -49,12 +49,12 @@
     --destructive-foreground: 210 20% 98%;
     --border: 215 27.9% 16.9%;
     --input: 215 27.9% 16.9%;
-    --ring:  263.4 70.2% 67.1%;
+    --ring: 263.4 70.2% 67.1%;
     --text: 215 20% 65%;
     --title: 0 0% 100%;
   }
 }
- 
+
 @layer base {
   * {
     @apply border-border;
@@ -65,39 +65,39 @@
 }
 
 @layer utilities {
-.style-scrollbar::-webkit-scrollbar {
-  height: 4px;
-}
-.style-scrollbar::-webkit-scrollbar-thumb {
-  background: #9E70E6;
-  border-radius: 10px;
-}
-.webkit-style-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.webkit-style-scrollbar::-webkit-scrollbar {
-  width: 2px;
-}
-.webkit-style-scrollbar::-webkit-scrollbar-thumb {
-  background: #b8bbb6;
-  border-radius: 10px;
-}
+  .style-scrollbar::-webkit-scrollbar {
+    height: 4px;
+  }
+  .style-scrollbar::-webkit-scrollbar-thumb {
+    background: #9e70e6;
+    border-radius: 10px;
+  }
+  .webkit-style-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .webkit-style-scrollbar::-webkit-scrollbar {
+    width: 2px;
+  }
+  .webkit-style-scrollbar::-webkit-scrollbar-thumb {
+    background: #b8bbb6;
+    border-radius: 10px;
+  }
 
-.style-scrollbar-h::-webkit-scrollbar {
-  width: 4px;
-}
-.style-scrollbar-h::-webkit-scrollbar-thumb {
-  background: #9E70E6;
-  border-radius: 10px;
-}
-.webkit-style-scrollbar-h::-webkit-scrollbar {
-  display: none;
-}
-.webkit-style-scrollbar-h::-webkit-scrollbar {
-  width: 2px;
-}
-.webkit-style-scrollbar-h::-webkit-scrollbar-thumb {
-  background: #b8bbb6;
-  border-radius: 10px;
-}
+  .style-scrollbar-h::-webkit-scrollbar {
+    width: 4px;
+  }
+  .style-scrollbar-h::-webkit-scrollbar-thumb {
+    background: #9e70e6;
+    border-radius: 10px;
+  }
+  .webkit-style-scrollbar-h::-webkit-scrollbar {
+    display: none;
+  }
+  .webkit-style-scrollbar-h::-webkit-scrollbar {
+    width: 2px;
+  }
+  .webkit-style-scrollbar-h::-webkit-scrollbar-thumb {
+    background: #b8bbb6;
+    border-radius: 10px;
+  }
 }
