@@ -3,11 +3,9 @@
 import { getReposData } from "@/services/api";
 import { useQuery } from "@tanstack/react-query";
 
-import { motion } from "framer-motion";
+import Link from "next/link";
 import MyCard from "../MyCard";
 import { Skeleton } from "../ui/skeleton";
-
-const MotionCard = motion(MyCard, { forwardMotionProps: true });
 
 export default function Repositories() {
   const { data, isLoading } = useQuery({
@@ -22,17 +20,21 @@ export default function Repositories() {
         data?.map(
           (repo: any, index: number) =>
             repo.stargazers_count > 0 && (
-              <MotionCard
+              <Link
                 key={index}
-                title="Project"
-                name={repo.name.replace(/-/g, " ")}
-                description={repo.description}
-                link={repo.html_url}
-                whileHover={{
-                  scale: 1.07,
-                  transition: { duration: 0.4 },
-                }}
-              />
+                href={repo.html_url}
+                className={`  ${
+                  repo.description === "Experience" && "cursor-default"
+                } flex xl:w-[48%]`}
+                target="_blank"
+              >
+                <MyCard
+                  title="Project"
+                  name={repo.name.replace(/-/g, " ")}
+                  description={repo.description}
+                  link={repo.html_url}
+                />
+              </Link>
             )
         )
       ) : (

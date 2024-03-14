@@ -15,16 +15,17 @@ export default function GloboTech() {
   return (
     <div
       id="inicial"
-      className="hidden lg:flex lg:flex-col lg:items-center lg:text-primary lg:font-bold lg:h-screen"
+      className="hidden h-auto lg:flex lg:flex-col lg:items-center lg:text-primary lg:font-bold justify-center"
     >
       {loading ? (
-        <Skeleton className="h-[50rem] rounded-full w-[50rem]" />
+        <Skeleton className="h-[32rem] rounded-full w-[32rem] ml-12 lg:ml-16" />
       ) : (
         <TagCloud
           options={(w: Window & typeof globalThis): TagCloudOptions => ({
-            radius: Math.min(800, w.innerWidth, w.innerHeight) / 2,
+            radius: Math.min(630, w.innerWidth, w.innerHeight) / 2,
             maxSpeed: "normal",
           })}
+          className="text-sm font-semibold"
         >
           {[
             "HTML5",
