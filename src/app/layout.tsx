@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
+import type { Metadata } from "next";
 
+import { QueryProvider } from "@/providers/ReactQueryProvider";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { QueryProvider } from "@/providers/ReactQueryProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning={true}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

@@ -1,7 +1,7 @@
 "use client";
 
-import { ReactNode, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
+import { ReactNode, useEffect } from "react";
 
 type ContainerAsideProps = React.HTMLAttributes<HTMLDivElement> & {
   id: string;

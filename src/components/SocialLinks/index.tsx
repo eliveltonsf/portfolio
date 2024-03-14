@@ -18,23 +18,25 @@ export default function SocialLinks({
     <div className="flex justify-start mt-6" {...rest}>
       <ul className="flex justify-between gap-7 text-sm">
         <li>
-          <Link href={gitHub} target="_blank">
+          <Link href={gitHub} target="_blank" className="hover:text-primary">
             {" "}
             GitHub
           </Link>
         </li>
         <li>
-          <Link href={instagram} target="_blank">
+          <Link href={instagram} target="_blank" className="hover:text-primary">
             Instagram
           </Link>
         </li>
         <li>
-          <Link href={linkedin} target="_blank">
+          <Link href={linkedin} target="_blank" className="hover:text-primary">
             Linkedin
           </Link>
         </li>
         <li>
-          <Link href={curriculum}>Currículo</Link>
+          <Link href={curriculum} className="hover:text-primary">
+            Currículo
+          </Link>
         </li>
       </ul>
     </div>

@@ -5,18 +5,17 @@ import { Card, CardContent } from "../ui/card";
 import { Skeleton } from "../ui/skeleton";
 
 import { BiLogoFigma } from "react-icons/bi";
-import { GiJesterHat } from "react-icons/gi";
-import { IoLogoJavascript } from "react-icons/io";
-import { TbBrandNextjs, TbError404Off } from "react-icons/tb";
 import {
-  FaHtml5,
   FaCss3,
+  FaDocker,
+  FaHtml5,
+  FaNode,
+  FaPython,
   FaReact,
   FaSass,
-  FaNode,
-  FaDocker,
-  FaPython,
 } from "react-icons/fa6";
+import { GiJesterHat } from "react-icons/gi";
+import { IoLogoJavascript } from "react-icons/io";
 import {
   SiCypress,
   SiKubernetes,
@@ -27,6 +26,7 @@ import {
   SiTypescript,
   SiVtex,
 } from "react-icons/si";
+import { TbBrandNextjs, TbError404Off } from "react-icons/tb";
 
 type StackDataProps = DynamicIconProps & {
   iconName: string;

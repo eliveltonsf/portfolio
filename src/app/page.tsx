@@ -1,19 +1,17 @@
-import Image from "next/image";
-import MyCard from "@/components/MyCard";
-import SocialLinks from "@/components/SocialLinks";
 import ContainerAside from "@/components/ContainerAside";
 import ModeToggle from "@/components/ModeToggle";
+import MyCard from "@/components/MyCard";
+import SocialLinks from "@/components/SocialLinks";
 import Stacks from "@/components/Stacks";
 import { Skeleton } from "@/components/ui/skeleton";
 import { EXPERIENCES_INFO } from "@/constants/experiences";
 import { STACKS_INFO } from "@/constants/stacks";
+import Image from "next/image";
 
-import { ArchiveIcon, BackpackIcon, RocketIcon } from "@radix-ui/react-icons";
 import Anchor from "@/components/Anchor";
-import Repositories from "@/components/Repositories";
 import GloboTech from "@/components/GloboTech";
-
-import { motion } from "framer-motion";
+import Repositories from "@/components/Repositories";
+import { ArchiveIcon, BackpackIcon, RocketIcon } from "@radix-ui/react-icons";
 
 export default function Home() {
   return (
@@ -36,27 +34,30 @@ export default function Home() {
       </Anchor>
 
       <section
-        className="flex flex-col gap-3 p-8 pb-16 
+        className="flex flex-col gap-3 p-6 pb-16 
         lg:w-[50%] lg:h-lvh lg:content-start lg:justify-between lg:p-20 lg:pr-0 lg:z-0"
       >
-        <Image src="./profile.png" alt="logo" width={160} height={160} />
+        <Image
+          src="./profile.png"
+          alt="logo"
+          width={160}
+          height={160}
+          className="lg:w-[150px] lg:h-[150px]"
+        />
 
         <div className="flex flex-col">
-          <span className="text-primary text-2xl font-medium">Quem sou</span>
+          <span className="text-primary text-xl font-medium">Quem sou</span>
           <h1
             className="font-bold text-[2.7rem] text-title bg-clip-text
-            lg:text-[3.7rem] lg:w-[60%]"
+            lg:text-[2.7rem]"
           >
             {" "}
             Elivelton Ferreira
           </h1>
-          <span className="text-text text-lg">Frontend & Mobile Developer</span>
+          <span className="text-text text-sm">Frontend & Mobile Developer</span>
         </div>
 
-        <p
-          className="text-sm  leading-7 text-text
-        lg:text-lg lg:w-[60%] lg:tracking-normal lg:leading-9"
-        >
+        <p className="text-sm  leading-7 text-text lg:tracking-normal lg:leading-9 lg:mr-20">
           O que me motiva é a busca incessante por desafios que me permitam
           aprender e crescer continuamente. Adoro colaborar em equipes
           inovadoras e trabalhar em projetos que nos tornam melhores a cada
@@ -74,8 +75,8 @@ export default function Home() {
       </section>
 
       <aside
-        className="flex flex-col justify-start items-start gap-3 w-full p-8 overflow-y-scroll
-        lg:w-[50%] lg:h-lvh lg:p-20 lg:pl-0 lg:pr-24 lg:scroll-smooth lg:style-scrollbar-h lg:overflow-x-hidden 2xl:ml-20"
+        className="flex flex-col justify-start items-start gap-3 w-full p-6 overflow-y-scroll
+        lg:w-[50%] lg:h-lvh lg:p-20 lg:pl-0  lg:scroll-smooth lg:style-scrollbar-h lg:overflow-x-hidden 2xl:ml-20"
       >
         <GloboTech />
 
@@ -85,7 +86,6 @@ export default function Home() {
               <MyCard
                 key={index}
                 title="Experience"
-                logo={item.logoPath}
                 date={item.period}
                 name={item.name}
                 link={item.linkedin}
