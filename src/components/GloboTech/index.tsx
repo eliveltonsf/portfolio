@@ -1,7 +1,7 @@
 "use client";
 
 import TagCloud, { TagCloudOptions } from "@frank-mayer/react-tag-cloud";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Skeleton } from "../ui/skeleton";
 
 export default function GloboTech() {

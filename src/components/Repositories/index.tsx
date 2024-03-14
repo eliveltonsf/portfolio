@@ -1,11 +1,11 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
 import { getReposData } from "@/services/api";
+import { useQuery } from "@tanstack/react-query";
 
+import { motion } from "framer-motion";
 import MyCard from "../MyCard";
 import { Skeleton } from "../ui/skeleton";
-import { motion } from "framer-motion";
 
 const MotionCard = motion(MyCard, { forwardMotionProps: true });
 

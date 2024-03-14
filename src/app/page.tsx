@@ -1,19 +1,17 @@
-import Image from "next/image";
-import MyCard from "@/components/MyCard";
-import SocialLinks from "@/components/SocialLinks";
 import ContainerAside from "@/components/ContainerAside";
 import ModeToggle from "@/components/ModeToggle";
+import MyCard from "@/components/MyCard";
+import SocialLinks from "@/components/SocialLinks";
 import Stacks from "@/components/Stacks";
 import { Skeleton } from "@/components/ui/skeleton";
 import { EXPERIENCES_INFO } from "@/constants/experiences";
 import { STACKS_INFO } from "@/constants/stacks";
+import Image from "next/image";
 
-import { ArchiveIcon, BackpackIcon, RocketIcon } from "@radix-ui/react-icons";
 import Anchor from "@/components/Anchor";
-import Repositories from "@/components/Repositories";
 import GloboTech from "@/components/GloboTech";
-
-import { motion } from "framer-motion";
+import Repositories from "@/components/Repositories";
+import { ArchiveIcon, BackpackIcon, RocketIcon } from "@radix-ui/react-icons";
 
 export default function Home() {
   return (

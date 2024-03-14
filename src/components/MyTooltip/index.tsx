@@ -1,10 +1,10 @@
-import React, { ReactNode } from "react";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import React, { ReactNode } from "react";
 
 type MyTooltipProps = React.HTMLAttributes<HTMLDivElement> & {
   children: ReactNode;

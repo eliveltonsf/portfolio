@@ -1,7 +1,8 @@
 /* eslint-disable react/display-name */
 "use client";
 
-import { useState, forwardRef, Ref } from "react";
+import Link from "next/link";
+import { Ref, forwardRef, useState } from "react";
 import {
   Card,
   CardContent,
@@ -9,9 +10,8 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import Link from "next/link";
 
-import { FaLinkedinIn, FaInstagram, FaLink } from "react-icons/fa";
+import { FaInstagram, FaLink, FaLinkedinIn } from "react-icons/fa";
 
 type CardProps = React.HTMLAttributes<HTMLDivElement> & {
   title: string;
