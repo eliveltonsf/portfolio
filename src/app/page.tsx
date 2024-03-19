@@ -70,7 +70,7 @@ export default function Home() {
           gitHub="https://github.com/eliveltonsf"
           instagram="https://www.instagram.com/eliveltonsf.dev/"
           linkedin="https://www.linkedin.com/in/eliveltonsf/"
-          curriculum="https://drive.google.com/file/d/1EDtcBaeuR9GAjJBQi7QjU0TyF6Oh2Pr6/view"
+          curriculum="https://drive.google.com/file/d/1yLvfweUh3bXBe9YE5jhGY-0OKZXhwvX0/view"
         />
       </section>
 
