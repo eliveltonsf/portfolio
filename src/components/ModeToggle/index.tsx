@@ -15,7 +15,7 @@ export default function ModeToggle() {
 
   return (
     <Button
-      className="absolute top-8 right-8 text-primary bg-card
+      className="absolute top-8 right-6 lg:right-8 text-primary bg-card
       hover:box-border hover:border hover:border-solid hover:border-2 hover:border-primary"
       variant="secondary"
       size="icon"
