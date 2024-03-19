@@ -7,11 +7,14 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "../ui/card";
 
+import { GitHubLogoIcon, Link2Icon } from "@radix-ui/react-icons";
 import { FaInstagram, FaLink, FaLinkedinIn } from "react-icons/fa";
+import { twMerge } from "tailwind-merge";
 
 type CardProps = React.HTMLAttributes<HTMLDivElement> & {
   title: "Project" | "Experience";
@@ -22,6 +25,7 @@ type CardProps = React.HTMLAttributes<HTMLDivElement> & {
   linkedin?: string;
   instagram?: string;
   site?: string;
+  className?: string;
 };
 
 const MyCard = forwardRef(
@@ -35,6 +39,7 @@ const MyCard = forwardRef(
       linkedin,
       instagram,
       site,
+      className,
       ...rest
     }: CardProps,
     ref: Ref<HTMLDivElement>
@@ -45,13 +50,16 @@ const MyCard = forwardRef(
     });
     return (
       <Card
-        className={`${
-          title === "Experience" && "border-none"
-        } mb-4 sm:p-4 bg-cover bg-no-repeat bg-card
+        className={twMerge(
+          `${
+            title === "Experience" && "border-none"
+          } mb-4 sm:p-4 bg-cover bg-no-repeat bg-card
         ${
           title === "Project" &&
-          "lg:hover:border-1 lg:hover:border-primary lg:transition lg:ease-in-out lg:delay-150 lg:duration-500 lg:hover:scale-105"
-        }`}
+          "lg:hover:border-2 lg:hover:border-primary lg:transition lg:ease-in-out lg:delay-150 lg:duration-500 lg:hover:scale-105"
+        } relative`,
+          className
+        )}
         ref={ref}
         {...rest}
       >
@@ -109,6 +117,28 @@ const MyCard = forwardRef(
                 </p>
               ))}
         </CardContent>
+        {title === "Project" && (
+          <CardFooter className="mb-4">
+            <div className="flex w-[100%] h-full justify-evenly items-end absolute top-0 left-0 bottom-0 right-0 rounded-sm z-50 ">
+              <Link
+                href={link}
+                className="flex items-center justify-center w-[50%]  h-8 rounded-bl-lg cursor-pointer pb-6"
+                target="_blank"
+              >
+                <GitHubLogoIcon className="h-[1.5rem] w-[1.5rem] text-white hover:text-primary " />
+              </Link>
+              {site && (
+                <Link
+                  href={site}
+                  className="flex items-center justify-center w-[50%]  h-8 rounded-bl-lg cursor-pointer pb-6"
+                  target="_blank"
+                >
+                  <Link2Icon className="h-[1.5rem] w-[1.5rem] text-white hover:text-primary" />
+                </Link>
+              )}
+            </div>
+          </CardFooter>
+        )}
       </Card>
     );
   }
