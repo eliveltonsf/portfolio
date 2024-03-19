@@ -20,9 +20,9 @@ export default function Anchor({
     <div
       className={twMerge(
         `hidden 
-         hover:box-border hover:border hover:border-solid hover:border-2 hover:border-primary
+         hover:box-border hover:border-solid hover:border-2 hover:border-primary
          lg:flex lg:justify-center lg:items-center lg:w-auto lg:h-auto lg:bg-card lg:absolute lg:right-8 lg:p-[0.527rem] lg:rounded-md
-         lg:border lg:border-2 lg:border-transparent`,
+         lg:border-2 lg:border-transparent`,
         className
       )}
       {...rest}
