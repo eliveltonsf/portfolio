@@ -39,7 +39,7 @@ export const PROJECTS_INFO = [
     name:'wide-life',
     description:'Aplicativo de dashboard para consultas médicas, exclusivo para desktop, com controle de agendamento, listagem e bloqueio de consultas em datas já ocupadas.',
     github:'https://github.com/eliveltonsf/wide-life',
-    link:'',
+    link:'https://wide-life-iojh.vercel.app/',
    },
    {
     name:'small-candy-store',
