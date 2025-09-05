@@ -34,7 +34,11 @@ export default function SocialLinks({
           </Link>
         </li>
         <li>
-          <Link href={curriculum} className="hover:text-primary">
+          <Link
+            href={curriculum}
+            target="_blank"
+            className="hover:text-primary"
+          >
             Currículo
           </Link>
         </li>

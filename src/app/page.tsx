@@ -42,7 +42,7 @@ export default function Home() {
           alt="logo"
           width={160}
           height={160}
-          className="lg:w-[150px] lg:h-[150px]"
+          className="lg:w-[150px] lg:h-[150px] rounded-full object-cove"
         />
 
         <div className="flex flex-col">
@@ -70,7 +70,7 @@ export default function Home() {
           gitHub="https://github.com/eliveltonsf"
           instagram="https://www.instagram.com/eliveltonsf.dev/"
           linkedin="https://www.linkedin.com/in/eliveltonsf/"
-          curriculum="https://drive.google.com/file/d/1yLvfweUh3bXBe9YE5jhGY-0OKZXhwvX0/view"
+          curriculum="https://drive.google.com/file/d/1v8F12yrKQeBRpJ2tQSnMWyFnPBz50AjU/view"
         />
       </section>
 
@@ -93,6 +93,7 @@ export default function Home() {
                 linkedin={item.linkedin}
                 instagram={item.instagram}
                 site={item.site}
+                enterprise={item.enterprise}
               />
             ))
           ) : (

@@ -26,6 +26,7 @@ type CardProps = React.HTMLAttributes<HTMLDivElement> & {
   instagram?: string;
   site?: string;
   className?: string;
+  enterprise?: string;
 };
 
 const MyCard = forwardRef(
@@ -39,6 +40,7 @@ const MyCard = forwardRef(
       linkedin,
       instagram,
       site,
+      enterprise,
       className,
       ...rest
     }: CardProps,
@@ -75,6 +77,9 @@ const MyCard = forwardRef(
                   </span>
 
                   <div className="flex gap-3 justify-start text-gray-400  my-3">
+                    {enterprise && (
+                      <span className="text-[0.89rem]">{enterprise}</span>
+                    )}
                     {linkedin && (
                       <Link href={linkedin} target="_blank">
                         <FaLinkedinIn
