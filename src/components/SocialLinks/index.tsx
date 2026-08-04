@@ -16,7 +16,7 @@ export default function SocialLinks({
 }: SocialLinksProps) {
   return (
     <div className="flex justify-start mt-6" {...rest}>
-      <ul className="flex justify-between gap-7 text-sm">
+      <ul className="flex justify-between gap-7 text-sm text-title">
         <li>
           <Link href={gitHub} target="_blank" className="hover:text-primary">
             {" "}
