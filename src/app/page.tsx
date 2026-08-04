@@ -76,9 +76,9 @@ export default function Home() {
         <div
           className={`flex flex-col overflow-hidden transition-all duration-700 lg:h-lvh lg:content-start lg:justify-between lg:z-0`}
         >
-          <div className="relative z-10 flex h-full flex-col justify-between p-5 text-white sm:p-6 lg:p-10">
+          <div className="relative z-10 flex h-full flex-col justify-start gap-6 p-5 text-white sm:p-6 lg:gap-8 lg:p-10">
             <div className="flex items-start justify-between gap-6 sm:flex-row sm:items-center sm:gap-8 lg:items-start lg:gap-10">
-              <div className="space-y-8">
+              <div className="space-y-6 lg:space-y-5">
                 <div>
                   <p className="text-primary mt-2 text-base font-semibold whitespace-nowrap sm:text-lg lg:text-xl">
                     Olá, quem sou
@@ -109,13 +109,15 @@ export default function Home() {
               <Image
                 src="./profile.jpg"
                 alt="logo"
-                width={200}
-                height={200}
+                width={600}
+                height={854}
+                quality={100}
+                sizes="(max-width: 640px) 96px, (max-width: 1024px) 128px, 200px"
                 className="h-24 w-24 shrink-0 rounded-full object-cover sm:h-32 sm:w-32 lg:h-[260px] lg:w-[200px]"
               />
             </div>
 
-            <p className="text-sm leading-7 text-text lg:tracking-normal lg:leading-9 mt-8">
+            <p className="mt-2 text-sm leading-7 text-text lg:leading-8 lg:tracking-normal">
               Sou uma pessoa movida por curiosidade, aprendizado e propósito. A
               tecnologia entrou na minha vida cedo e, desde então, encontrei na
               resolução de problemas e na construção de soluções uma forma de
