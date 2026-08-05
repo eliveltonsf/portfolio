@@ -20,6 +20,7 @@ type CardProps = React.HTMLAttributes<HTMLDivElement> & {
   title: "Project" | "Experience";
   name: string;
   description: string;
+  metrics?: string;
   date?: string;
   link: string;
   linkedin?: string;
@@ -35,6 +36,7 @@ const MyCard = forwardRef(
       title,
       name,
       description,
+      metrics,
       date,
       link,
       linkedin,
@@ -44,7 +46,7 @@ const MyCard = forwardRef(
       className,
       ...rest
     }: CardProps,
-    ref: Ref<HTMLDivElement>
+    ref: Ref<HTMLDivElement>,
   ) => {
     const [listDescription, setListDescription] = useState(() => {
       const list = description.split(".");
@@ -60,13 +62,13 @@ const MyCard = forwardRef(
           title === "Project" &&
           "lg:hover:border-2 lg:hover:border-primary lg:transition lg:ease-in-out lg:delay-150 lg:duration-500 lg:hover:scale-105"
         } relative`,
-          className
+          className,
         )}
         ref={ref}
         {...rest}
       >
         <CardHeader className="pb-2">
-          <CardTitle className=" text-[0.7rem] text-primary uppercase tracking-widest h-auto">
+          <CardTitle className="text-[0.7rem] text-primary uppercase tracking-widest h-auto">
             {date ? (
               <div className="flex flex-col justify-between h-auto pb-4 sm:relative ">
                 <div>
@@ -121,6 +123,14 @@ const MyCard = forwardRef(
                   {item}
                 </p>
               ))}
+          {metrics && (
+            <>
+              <span className="text-[0.7rem] text-primary uppercase tracking-widest block mb-1">
+                Contribution
+              </span>
+              <span className="text-sm text-gray-400 text-text">{metrics}</span>
+            </>
+          )}
         </CardContent>
         {title === "Project" && (
           <CardFooter className="mb-4">
@@ -146,6 +156,6 @@ const MyCard = forwardRef(
         )}
       </Card>
     );
-  }
+  },
 );
 export default MyCard;

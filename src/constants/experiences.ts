@@ -1,9 +1,11 @@
 export const EXPERIENCES_INFO = [
   {
-    period: "Mai de 2024 - O momento · 1 ano 5 meses",
+    period: "Mai de 2024 - Jul de 2026 · 2 anos 2 meses",
     name: "Frontend Web - Projeto ",
     description:
-      "✓ Atuação como desenvolvedor front-end na equipe de Inovação e Novos Projetos da Lello, focada no segmento de condomínios. ✓ Desenvolvimento de interfaces modernas e responsivas utilizando React com Material UI (MUI). ✓ Participação no planejamento, estimação e definição técnica das demandas, apoiando o direcionamento estratégico dos projetos. ✓ Implementação de novas funcionalidades e manutenção de código, com foco em performance, usabilidade e experiência do usuário. ✓ Integração com APIs REST, garantindo a comunicação eficiente entre front-end e back-end. ✓ Utilização de boas práticas de versionamento de código com Git, repositórios hospedados no GitHub/GitLab. ✓ Participação em cerimônias ágeis (daily, planning, review e retrospective), aplicando a metodologia Scrum no ciclo de desenvolvimento. ✓ Colaboração ativa em projetos de transformação digital voltados para otimizar a gestão condominial.",
+      "✓ Desenvolvedor front-end na equipe de Inovação e Novos Projetos para soluções voltadas à gestão condominial. ✓ Desenvolvimento de interfaces modernas e responsivas com React, TypeScript e Material UI (MUI). ✓ IParticipação no planejamento técnico, estimação de demandas e definição de arquitetura das funcionalidades. ✓ Integração com APIs REST, manutenção de aplicações e otimização de performance, usabilidade e experiência do usuário.",
+    metrics:
+      "Integrei a equipe de inovação, atuando ao lado do Tech Lead no ciclo completo dos projetos. Contribuí no levantamento de requisitos, identificação de melhorias e desenvolvimento de componentes reutilizáveis, escaláveis e de fácil manutenção.",
     enterprise: "Lello",
     linkedin: "https://www.linkedin.com/company/lellocondominios/",
     instagram: "https://www.instagram.com/lellocondominios/",
@@ -13,27 +15,21 @@ export const EXPERIENCES_INFO = [
     period: "jun de 2023 - nov de 2023 · 6 meses",
     name: "Frontend Web e Mobile ",
     description:
-      " ✓ Atuação na manutenção de código para solução de bugs e implementação de melhorias no sistema web e na aplicação mobile da empresa. ✓ Desenvolvimento em React/React Native com Typescript, e utilização do styled-components para estilização. ✓ Experiência com o recebimento de dados via WebSocket. ✓ Desenvolvimento do novo layout do sistema web utilizando Next 13 como biblioteca principal, e estilização com TailwindCSS. ✓ Versionamento de código utilizando Git, com hospedagem dos repositórios no GitHub. ✓ Participação em projetos seguindo a metodologia Scrum.",
+      " ✓ Desenvolvimento e manutenção de aplicações web e mobile com React, React Native, TypeScript, NextJs e Tailwind CSS. ✓ Implementação de melhorias, novo layout da plataforma e integração em tempo real via WebSocket. ✓ Colaboração em projetos ágeis utilizando Git e Scrum.",
+    metrics:
+      "Participei da modernização da stack JavaScript do projeto do zero, contribuindo para uma arquitetura mais sólida, segura e performática. Estruturei o fluxo de requisições para evitar duplicidades e aumentar a eficiência da aplicação.",
     enterprise: "Spott",
     linkedin: "https://www.linkedin.com/company/evspott/",
     instagram: "https://www.instagram.com/spott.eco/",
     site: "https://spott.eco/",
   },
   {
-    period: "fev de 2023 - jul de 2023 · 6 meses",
-    name: "Professor de tecnologia da informação",
-    description:
-      " ✓ Lecionar em escola profissional de ensino médio e técnico conceitos de robótica, sistema operacional e hardware de computadores. ✓ Preparar os alunos para a carreira na área da tecnologia, fornecendo conhecimentos em desenvolvimento web. ✓ Auxiliar os alunos em projetos de software, incluindo trabalhos de conclusão de curso.",
-    enterprise: "Gov CE",
-    linkedin: "",
-    instagram: "",
-    site: "",
-  },
-  {
     period: "nov de 2021 - dez de 2022 · 1 ano 2 meses",
     name: "Frontend Web Developer PL",
     description:
-      " ✓ Prestar suporte a clientes, incluindo Fila, Humbro, Extrafarma, Promofarma, SaudeID e Orthocrin. ✓ Trabalhar em uma equipe dedicada a projetos de e-commerce. ✓ Realizar correções de bugs e levantamento de melhorias. ✓ Criar novos layouts conforme especificações da equipe de design. ✓ Atualizar versões e realizar testes em ambientes de homologação. ✓ Realizar o deploy da versão final. ✓ Utilizar tecnologias como Vtex IO, Vtex CMS, Vanilla JS, ReactJS, SASS, HTML, CSS e jQuery. ✓ Seguir o padrão de Web Design Responsive Mobile First. ✓ Trabalhar com disparo de eventos para o Google Analytics.",
+      " ✓ Desenvolvimento de soluções para e-commerce de clientes como Fila, Umbro, Extrafarma e SaúdeID. ✓ Implementação de layouts responsivos, testes em homologação e publicação de aplicações. ✓ Utilizar tecnologias como Vtex IO, Vtex CMS, Vanilla JS, ReactJS, SASS, HTML, CSS e jQuery. ✓ Seguir o padrão de Web Design Responsive Mobile First. ✓ Trabalhar com disparo de eventos para o Google Analytics.",
+    metrics:
+      "Desenvolvi soluções para grandes marcas com foco na experiência do usuário. Na Extrafarma, participei da melhoria da jornada do cliente; na Dengo, atuei na evolução do checkout e na integração entre vendas físicas e online, reduzindo conflitos de estoque entre os canais.",
     enterprise: "Codeby",
     linkedin: "https://www.linkedin.com/company/codeby/",
     instagram: "https://www.instagram.com/grupocodeby/",
@@ -43,7 +39,9 @@ export const EXPERIENCES_INFO = [
     period: "jun de 2021 - jan de 2022 · 8 meses",
     name: "Frontend Web Developer",
     description:
-      " ✓ Desenvolver novas funcionalidades inovadoras para os clientes por meio da web. ✓ Objetivo de atender às necessidades e agregar valor ao dia a dia dos clientes. ✓ Implementar os princípios de UX para melhorar a experiência do usuário. ✓ Criar interfaces responsivas para dashboards, controle logístico e sistemas internos de gestão. ✓ Integração completa das funcionalidades desenvolvidas ao sistema próprio da empresa.",
+      " ✓ Desenvolvimento de dashboards e sistemas internos com foco em UX e interfaces responsivas. ✓ Integração de funcionalidades ao sistema da empresa e implementação de melhorias para clientes. ✓ Criar interfaces responsivas para dashboards, controle logístico e sistemas internos de gestão. ✓ Integração completa das funcionalidades desenvolvidas ao sistema próprio da empresa.",
+    metrics:
+      "Atuei como único desenvolvedor frontend, criando soluções para clientes e desenvolvendo um sistema de controle de recebimento de produtos em tempo real, reduzindo perdas e melhorando o controle de entrada e saída de mercadorias.",
     enterprise: "Infarma",
     linkedin: "https://www.linkedin.com/company/infarma-sistemas/",
     instagram: "https://www.instagram.com/infarmasistemas/",
@@ -54,6 +52,8 @@ export const EXPERIENCES_INFO = [
     name: "Frontend Web Developer JR",
     description:
       " ✓ Contribuição na equipe de suporte e inovação para aplicativos, sites internos e projetos. ✓ Criação de telas intuitivas e precisas, conforme as solicitações recebidas. ✓ Foco na usabilidade para uma melhor integração com o usuário final. ✓ Desenvolvimento de telas para aplicativos de validação de dados, incluindo integração com APIs externas de segurança. ✓ Participação na equipe de briefing para levantamento de requisitos de novos projetos. ✓ Envolvimento na criação do frontend de dois projetos de imobiliária, incluindo a construção de um Dashboard e um Marketplace.",
+    metrics:
+      "Minha primeira experiência como desenvolvedor, onde coloquei em prática anos de dedicação e desenvolvimento profissional. Atuei diretamente como cliente, levantando requisitos e propondo melhorias que contribuíram para a evolução do produto e o fortalecimento da sua identidade digital.",
     enterprise: "Mobs2",
     linkedin: "https://www.linkedin.com/company/mobs2/",
     instagram: "https://www.instagram.com/mobs2tech",

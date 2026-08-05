@@ -5,6 +5,7 @@ import { Card, CardContent } from "../ui/card";
 import { Skeleton } from "../ui/skeleton";
 
 import { BiLogoFigma } from "react-icons/bi";
+import { FaAws } from "react-icons/fa";
 import {
   FaCss3,
   FaDocker,
@@ -16,15 +17,26 @@ import {
 } from "react-icons/fa6";
 import { GiJesterHat } from "react-icons/gi";
 import { IoLogoJavascript } from "react-icons/io";
+import { PiFileSqlLight } from "react-icons/pi";
+import { RiBearSmileLine } from "react-icons/ri";
 import {
   SiCypress,
+  SiExpress,
+  SiGraphql,
   SiKubernetes,
+  SiMui,
+  SiPyup,
   SiRadixui,
+  SiRedux,
+  SiShadcnui,
   SiStorybook,
   SiStyledcomponents,
   SiTailwindcss,
+  SiTanstack,
+  SiTestinglibrary,
   SiTypescript,
   SiVtex,
+  SiZod,
 } from "react-icons/si";
 import { TbBrandNextjs, TbError404Off } from "react-icons/tb";
 
@@ -108,6 +120,42 @@ export default function Stacks({ data, ...rest }: CardProps) {
         break;
       case "cypress":
         iconComponent = <SiCypress size={50} />;
+        break;
+      case "redux":
+        iconComponent = <SiRedux size={50} />;
+        break;
+      case "zustand":
+        iconComponent = <RiBearSmileLine size={50} />;
+        break;
+      case "zod":
+        iconComponent = <SiZod size={50} />;
+        break;
+      case "yup":
+        iconComponent = <SiPyup size={50} />;
+        break;
+      case "testing-library":
+        iconComponent = <SiTestinglibrary size={50} />;
+        break;
+      case "shadcn":
+        iconComponent = <SiShadcnui size={50} />;
+        break;
+      case "mui":
+        iconComponent = <SiMui size={50} />;
+        break;
+      case "tanstack":
+        iconComponent = <SiTanstack size={50} />;
+        break;
+      case "express":
+        iconComponent = <SiExpress size={50} />;
+        break;
+      case "aws":
+        iconComponent = <FaAws size={50} />;
+        break;
+      case "graphql":
+        iconComponent = <SiGraphql size={50} />;
+        break;
+      case "sql":
+        iconComponent = <PiFileSqlLight size={50} />;
         break;
       default:
         iconComponent = <TbError404Off size={50} />;

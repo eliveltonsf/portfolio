@@ -117,7 +117,7 @@ export default function Home() {
               />
             </div>
 
-            <p className="mt-2 text-sm leading-7 text-text lg:leading-8 lg:tracking-normal">
+            <p className="mt-2 text-sm leading-7 text-text lg:leading-8 lg:tracking-normal lg:w-[70%]">
               Sou uma pessoa movida por curiosidade, aprendizado e propósito. A
               tecnologia entrou na minha vida cedo e, desde então, encontrei na
               resolução de problemas e na construção de soluções uma forma de
@@ -152,6 +152,7 @@ export default function Home() {
                 name={item.name}
                 link={item.linkedin}
                 description={item.description}
+                metrics={item.metrics}
                 linkedin={item.linkedin}
                 instagram={item.instagram}
                 site={item.site}
