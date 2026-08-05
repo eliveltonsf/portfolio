@@ -13,6 +13,7 @@ import { useEffect, useRef, useState } from "react";
 import Anchor from "@/components/Anchor";
 import GloboTech from "@/components/GloboTech";
 import Repositories from "@/components/Repositories";
+import StacksBlock from "@/components/Stacks/StacksBlock";
 import { ArchiveIcon, BackpackIcon, RocketIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 
@@ -76,10 +77,10 @@ export default function Home() {
         <div
           className={`flex flex-col overflow-hidden transition-all duration-700 lg:h-lvh lg:content-start lg:justify-between lg:z-0`}
         >
-          <div className="relative z-10 flex h-full flex-col justify-start gap-6 p-5 text-white sm:p-6 lg:gap-8 lg:p-10">
-            <div className="flex items-start justify-between gap-6 sm:flex-row sm:items-center sm:gap-8 lg:items-start lg:gap-10">
+          <div className="relative z-10 flex h-full flex-col justify-start gap-6 p-5 text-white sm:p-6 lg:gap-0 lg:p-10">
+            <div className="flex items-start justify-between gap-6 sm:flex-row sm:items-center sm:gap-8 lg:items-start lg:gap-4">
               <div className="space-y-6 lg:space-y-5">
-                <div>
+                <div className="flex flex-col w-full">
                   <p className="text-primary mt-2 text-base font-semibold whitespace-nowrap sm:text-lg lg:text-xl">
                     Olá, quem sou
                   </p>
@@ -94,7 +95,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-6 text-white/90 sm:gap-8">
+                <div className="flex flex-col flex-wrap gap-6 text-white/90 sm:gap-6 w-full">
                   <div>
                     <p className="text-3xl text-title font-light leading-none sm:text-4xl">
                       +5
@@ -116,6 +117,8 @@ export default function Home() {
                 className="h-24 w-24 shrink-0 rounded-full object-cover sm:h-32 sm:w-32 lg:h-[260px] lg:w-[200px]"
               />
             </div>
+
+            <StacksBlock data={STACKS_INFO} />
 
             <p className="mt-2 text-sm leading-7 text-text lg:leading-8 lg:tracking-normal lg:w-[70%]">
               Sou uma pessoa movida por curiosidade, aprendizado e propósito. A

@@ -1,4 +1,5 @@
 "use client";
+import type { StackInfo } from "@/constants/stacks";
 import { useState } from "react";
 
 import { Card, CardContent } from "../ui/card";
@@ -40,19 +41,27 @@ import {
 } from "react-icons/si";
 import { TbBrandNextjs, TbError404Off } from "react-icons/tb";
 
-type StackDataProps = DynamicIconProps & {
-  iconName: string;
-  description: string;
-  study: boolean;
-};
-
 interface DynamicIconProps {
   iconName: string;
 }
 
 interface CardProps {
-  data: StackDataProps[];
+  data: StackInfo[];
 }
+
+const CATEGORY_LABELS: Record<StackInfo["category"], string> = {
+  front: "Front",
+  back: "Back",
+  mobile: "Mobile",
+  infra: "Infra",
+};
+
+const CATEGORY_ORDER: StackInfo["category"][] = [
+  "front",
+  "back",
+  "mobile",
+  "infra",
+];
 
 export default function Stacks({ data, ...rest }: CardProps) {
   const [selectStack, setSelectStack] = useState({
@@ -164,6 +173,11 @@ export default function Stacks({ data, ...rest }: CardProps) {
     return iconComponent;
   };
 
+  const getTechLabel = (iconName: string) =>
+    iconName
+      .replace(/-/g, " ")
+      .replace(/\b\w/g, (letter) => letter.toUpperCase());
+
   return (
     <div className="flex flex-col justify-start gap-6" {...rest}>
       <aside className="mt-4 min-h-32">
@@ -187,7 +201,7 @@ export default function Stacks({ data, ...rest }: CardProps) {
               key={index}
               className={`box-border flex justify-center items-center w-20 h-20 border-none mb-4 relative ${
                 selectStack.iconName === stack.iconName &&
-                "border border-solid border-2 border-primary"
+                "border-2 border-solid border-primary"
               }
               lg:mb-0`}
               onMouseOverCapture={() =>
