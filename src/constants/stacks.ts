@@ -30,27 +30,18 @@ export const STACKS_INFO: StackInfo[] = [
     category: "front",
   },
   {
-    iconName: "figma",
+    iconName: "react",
     description:
-      "Figma é um editor gráfico de vetor e prototipagem de projetos de design baseado principalmente no navegador web",
+      "React é uma biblioteca JavaScript com foco em criar interfaces de usuário de forma componetizada.",
     study: false,
     category: "front",
   },
-
   {
-    iconName: "jest",
+    iconName: "react-native",
     description:
-      "Jest é um framework de teste em JavaScript projetado para garantir a correção de qualquer código JavaScript. Ele permite que você escreva testes com uma API acessível, familiar e rica em recursos que lhe dá resultados rapidamente.",
-    study: false,
-    category: "front",
-  },
-
-  {
-    iconName: "mui",
-    description:
-      "MUI (Material-UI) é uma biblioteca de componentes para React, baseada no Material Design do Google, projetada para fornecer uma maneira fácil e rápida de construir interfaces de usuário modernas e responsivas.",
+      "React Native é um framework para construir aplicações móveis usando React e JavaScript.",
     study: true,
-    category: "front",
+    category: "mobile",
   },
   {
     iconName: "next",
@@ -59,11 +50,19 @@ export const STACKS_INFO: StackInfo[] = [
     study: false,
     category: "front",
   },
+
   {
-    iconName: "radix",
+    iconName: "figma",
     description:
-      "Radix é uma biblioteca que fornece componentes acessíveis e sem estilos para a criação de aplicação em React.",
+      "Figma é um editor gráfico de vetor e prototipagem de projetos de design baseado principalmente no navegador web",
     study: false,
+    category: "front",
+  },
+  {
+    iconName: "mui",
+    description:
+      "MUI (Material-UI) é uma biblioteca de componentes para React, baseada no Material Design do Google, projetada para fornecer uma maneira fácil e rápida de construir interfaces de usuário modernas e responsivas.",
+    study: true,
     category: "front",
   },
   {
@@ -98,6 +97,20 @@ export const STACKS_INFO: StackInfo[] = [
     iconName: "tailwind",
     description:
       "Tailwind CSS é um framework CSS que nos fornece classes utilitárias com o propósito de estilizar as páginas.",
+    study: false,
+    category: "front",
+  },
+  {
+    iconName: "jest",
+    description:
+      "Jest é um framework de teste em JavaScript projetado para garantir a correção de qualquer código JavaScript. Ele permite que você escreva testes com uma API acessível, familiar e rica em recursos que lhe dá resultados rapidamente.",
+    study: false,
+    category: "front",
+  },
+  {
+    iconName: "radix",
+    description:
+      "Radix é uma biblioteca que fornece componentes acessíveis e sem estilos para a criação de aplicação em React.",
     study: false,
     category: "front",
   },
@@ -137,6 +150,35 @@ export const STACKS_INFO: StackInfo[] = [
     category: "front",
   },
   {
+    iconName: "cypress",
+    description:
+      "Cypress é um framework para automação de testes end-to-end, onde atualmente usa a linguagem JavaScript.",
+    study: true,
+    category: "front",
+  },
+
+  {
+    iconName: "redux",
+    description:
+      "Redux é uma biblioteca de gerenciamento de estado previsível para aplicativos JavaScript, frequentemente usada com bibliotecas como React ou Angular para construir interfaces de usuário.",
+    study: true,
+    category: "front",
+  },
+  {
+    iconName: "typescript",
+    description:
+      "TypeScript é um superset do JavaScript que incluir recursos que não estão presentes na linguagem de forma nativa, além de torná-la estática.",
+    study: false,
+    category: "front",
+  },
+  {
+    iconName: "node",
+    description:
+      "Nodejs é uma plataforma para executar código javascript com foco em montar regras de negócio e persistir dados para o fontend.",
+    study: false,
+    category: "back",
+  },
+  {
     iconName: "express",
     description:
       "Express é um framework web para Node.js, projetado para construir aplicações web e APIs de forma rápida e fácil.",
@@ -148,13 +190,6 @@ export const STACKS_INFO: StackInfo[] = [
     description:
       "GraphQL é uma linguagem de consulta para APIs, permitindo que os clientes solicitem exatamente os dados de que precisam.",
     study: true,
-    category: "back",
-  },
-  {
-    iconName: "node",
-    description:
-      "Nodejs é uma plataforma para executar código javascript com foco em montar regras de negócio e persistir dados para o fontend.",
-    study: false,
     category: "back",
   },
   {
@@ -172,39 +207,11 @@ export const STACKS_INFO: StackInfo[] = [
     category: "back",
   },
   {
-    iconName: "cypress",
-    description:
-      "Cypress é um framework para automação de testes end-to-end, onde atualmente usa a linguagem JavaScript.",
-    study: true,
-    category: "mobile",
-  },
-  {
-    iconName: "react",
-    description:
-      "React é uma biblioteca JavaScript com foco em criar interfaces de usuário de forma componetizada.",
-    study: false,
-    category: "mobile",
-  },
-  {
-    iconName: "redux",
-    description:
-      "Redux é uma biblioteca de gerenciamento de estado previsível para aplicativos JavaScript, frequentemente usada com bibliotecas como React ou Angular para construir interfaces de usuário.",
-    study: true,
-    category: "mobile",
-  },
-  {
-    iconName: "typescript",
-    description:
-      "TypeScript é um superset do JavaScript que incluir recursos que não estão presentes na linguagem de forma nativa, além de torná-la estática.",
-    study: false,
-    category: "mobile",
-  },
-  {
     iconName: "zustand",
     description:
       "Zustand é uma biblioteca de gerenciamento de estado para aplicativos JavaScript, frequentemente usada com bibliotecas como React para construir interfaces de usuário.",
     study: true,
-    category: "mobile",
+    category: "front",
   },
   {
     iconName: "aws",

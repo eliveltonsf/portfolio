@@ -39,7 +39,11 @@ import {
   SiVtex,
   SiZod,
 } from "react-icons/si";
-import { TbBrandNextjs, TbError404Off } from "react-icons/tb";
+import {
+  TbBrandNextjs,
+  TbBrandReactNative,
+  TbError404Off,
+} from "react-icons/tb";
 
 interface DynamicIconProps {
   iconName: string;
@@ -165,6 +169,9 @@ export default function Stacks({ data, ...rest }: CardProps) {
         break;
       case "sql":
         iconComponent = <PiFileSqlLight size={50} />;
+        break;
+      case "react-native":
+        iconComponent = <TbBrandReactNative size={50} />;
         break;
       default:
         iconComponent = <TbError404Off size={50} />;
